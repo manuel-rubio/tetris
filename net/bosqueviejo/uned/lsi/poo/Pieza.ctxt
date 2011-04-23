@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Pieza()
+comment0.text=\n\ Constructor\ de\ la\ clase.\ Genera\ un\ color\ de\ forma\n\ aleatoria\ para\ la\ pieza.\n
+comment1.params=
+comment1.target=void\ rotar()
+comment1.text=\n\ Rotaci\u00F3n\ de\ piezas.\n
+comment2.params=
+comment2.target=short[][]\ toma()
+comment2.text=\n\ Toma\ la\ posici\u00F3n\ actual\ en\ formato\ de\ matriz\ de\ 4x4.\n\ \n\ @return\ matriz\ de\ enteros\ cortos\ de\ 4x4\ con\ 0\ \u00F3\ 1,\ seg\u00FAn\ donde\ hay\ pieza.\n
+comment3.params=
+comment3.target=short[][]\ tomaSig()
+comment3.text=\n\ Toma\ la\ posicion\ actual\ en\ formato\ de\ matriz\ de\ la\ siguiente\ posicion.\n\ \n\ @return\ matriz\ de\ enteros\ cortos\ de\ 4x4\ con\ 0\ \u00F3\ 1,\ seg\u00FAn\ donde\ hay\ pieza.\n
+comment4.params=
+comment4.target=java.awt.Color\ getColor()
+comment4.text=\n\ Toma\ el\ color\ de\ la\ pieza\ actual.\n\ \n\ @return\ el\ color\ de\ la\ pieza.\n
+comment5.params=
+comment5.target=Pieza\ factory()
+comment5.text=\n\ Genera\ una\ pieza\ aleatoriamente\ y\ con\ color\ aleatorio.\n\ \n\ @return\ la\ pieza\ generada.\n
+numComments=6

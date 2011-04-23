@@ -1,0 +1,19 @@
+#BlueJ package file
+package.editor.height=513
+package.editor.width=813
+package.editor.x=60
+package.editor.y=29
+package.numDependencies=0
+package.numTargets=1
+package.showExtends=true
+package.showUses=true
+readme.editor.height=683
+readme.editor.width=900
+readme.editor.x=0
+readme.editor.y=22
+target1.height=62
+target1.name=net
+target1.type=PackageTarget
+target1.width=80
+target1.x=30
+target1.y=380

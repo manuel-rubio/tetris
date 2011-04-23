@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=EleDerecha()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ EleDerecha\n
+comment1.params=
+comment1.target=void\ rotar()
+comment1.text=\n\ Rotaci\u00F3n\ de\ piezas.\n
+comment2.params=
+comment2.target=short[][]\ toma()
+comment2.text=\n\ Da\ la\ pieza\ en\ curso.\n\ \n\ @return\ la\ pieza\ en\ formato\ de\ matriz\ de\ 4x4.\n
+comment3.params=
+comment3.target=short[][]\ tomaSig()
+comment3.text=\n\ Da\ la\ pieza\ siguiente.\n\ \n\ @return\ la\ pieza\ en\ formato\ de\ matriz\ de\ 4x4.\n
+numComments=4

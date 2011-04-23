@@ -1,0 +1,6 @@
+PROJECT TITLE: tetris
+PURPOSE OF PROJECT: practica para la asignatura POO de la UNED
+VERSION or DATE: 1 de abril de 2011
+HOW TO START THIS PROJECT:
+AUTHORS: Manuel A. Rubio
+USER INSTRUCTIONS:
