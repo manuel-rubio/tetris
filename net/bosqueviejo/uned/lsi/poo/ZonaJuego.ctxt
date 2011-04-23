@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ repaint()
+comment1.params=
+comment1.target=int\ otraVez()
+comment2.params=tablero\ s
+comment2.target=void\ setTablero(Tablero,\ int)
+comment3.params=al
+comment3.target=void\ teclado(java.awt.event.KeyListener)
+numComments=4

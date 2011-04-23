@@ -18,35 +18,20 @@ import java.awt.Graphics;
  */
 public class Cuadrado extends Pieza
 {
-    private short[][] formas = 
-    {
-        { 1, 1, 0, 0 },
-        { 1, 1, 0, 0 },
-        { 0, 0, 0, 0 },
-        { 0, 0, 0, 0 }
-    };
-
-    /**
-     * Rotaci—n de piezas.
-     */
-    public void rotar() {
+    protected short[][][] getFormas() {
+        short[][][] formas = 
+        {
+            {
+                { 1, 1, 0, 0 },
+                { 1, 1, 0, 0 },
+                { 0, 0, 0, 0 },
+                { 0, 0, 0, 0 }
+            }
+        };
+        return formas;
     }
     
-    /**
-     * Da la pieza en curso.
-     * 
-     * @return la pieza en formato de matriz de 4x4.
-     */
-    public short[][] toma() {
-        return formas;
-    }
-
-    /**
-     * Da la pieza siguiente.
-     * 
-     * @return la pieza en formato de matriz de 4x4.
-     */
-    public short[][] tomaSig() {
-        return formas;
+    protected int getRotaciones() {
+        return 1;
     }
 }

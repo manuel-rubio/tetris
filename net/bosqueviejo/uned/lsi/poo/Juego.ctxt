@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=x\ y\ s\ zonaJuego
+comment0.target=Juego(int,\ int,\ int,\ ZonaJuego)
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Tablero\n\ \n\ @param\ x\ ancho\ del\ tablero.\n\ @param\ y\ alto\ del\ tablero.\n\ @param\ s\ tama\u00F1o\ del\ bloque\ en\ p\u00EDxeles.\n
+comment1.params=
+comment1.target=void\ reinicia()
+comment1.text=\n\ Limpia\ el\ tablero.\n
+comment2.params=
+comment2.target=void\ bajaPieza()
+comment2.text=\n\ Avanza\ la\ pieza\ abajo\ en\ el\ tablero.\ Comprueba\ tambi\u00E9n\ si\ se\ puede\ avanzar\ con\ la\ pieza,\n\ sino,\ pregunta\ si\ quiere\ reiniciar\ el\ juego\ y\ puede\ terminar\ o\ volver\ a\ comenzar.\n
+comment3.params=e
+comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.text=\n\ Se\ encarga\ de\ tomar\ los\ eventos\ del\ Timer.\n
+comment4.params=e
+comment4.target=void\ keyTyped(java.awt.event.KeyEvent)
+comment5.params=e
+comment5.target=void\ keyPressed(java.awt.event.KeyEvent)
+comment6.params=e
+comment6.target=void\ keyReleased(java.awt.event.KeyEvent)
+numComments=7

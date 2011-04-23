@@ -1,11 +1,6 @@
 #BlueJ class context
 comment0.params=
-comment0.target=void\ rotar()
-comment0.text=\n\ Rotaci\u00F3n\ de\ piezas.\n
+comment0.target=short[][][]\ getFormas()
 comment1.params=
-comment1.target=short[][]\ toma()
-comment1.text=\n\ Da\ la\ pieza\ en\ curso.\n\ \n\ @return\ la\ pieza\ en\ formato\ de\ matriz\ de\ 4x4.\n
-comment2.params=
-comment2.target=short[][]\ tomaSig()
-comment2.text=\n\ Da\ la\ pieza\ siguiente.\n\ \n\ @return\ la\ pieza\ en\ formato\ de\ matriz\ de\ 4x4.\n
-numComments=3
+comment1.target=int\ getRotaciones()
+numComments=2

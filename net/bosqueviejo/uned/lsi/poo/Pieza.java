@@ -12,7 +12,8 @@ import java.util.Random;
  */
 public abstract class Pieza
 {
-    protected Color color;  //!< Color de la pieza
+    private Color color;  //!< Color de la pieza.
+    private int posicion; //!< Posici—n de rotaci—n de la pieza.
     
     /**
      * Nombre de las clases que se pueden emplear para factory.
@@ -46,26 +47,34 @@ public abstract class Pieza
      */
     public Pieza() {
         color = colores[random.nextInt(colores.length)];
+        posicion = 0;
     }
 
     /**
      * Rotaci—n de piezas.
      */
-    abstract public void rotar();
+    public void rotar() {
+        posicion = (++posicion) % getRotaciones();
+    }
     
     /**
-     * Toma la posici—n actual en formato de matriz de 4x4.
+     * Da la pieza en curso.
      * 
-     * @return matriz de enteros cortos de 4x4 con 0 — 1, segœn donde hay pieza.
+     * @return la pieza en formato de matriz de 4x4.
      */
-    abstract public short[][] toma();
-    
+    public short[][] toma() {
+        return getFormas()[posicion];
+    }
+
     /**
-     * Toma la posicion actual en formato de matriz de la siguiente posicion.
+     * Da la pieza siguiente.
      * 
-     * @return matriz de enteros cortos de 4x4 con 0 — 1, segœn donde hay pieza.
+     * @return la pieza en formato de matriz de 4x4.
      */
-    abstract public short[][] tomaSig();
+    public short[][] tomaSig() {
+        int posicion = (this.posicion+1) % getRotaciones();
+        return getFormas()[posicion];
+    }
 
     /**
      * Toma el color de la pieza actual.
@@ -86,9 +95,31 @@ public abstract class Pieza
         Pieza pieza;
         try {
             pieza = (Pieza) tipoPieza.newInstance();
-        } catch (Exception ie) {
+        } catch (Exception e) {
+            e.printStackTrace();
             pieza = new EleIzquierda();
         }
         return pieza;
     }
+    
+    /**
+     * Obtiene las formas para la pieza. La cantidad de formas
+     * depender‡ de las rotaciones que tenga la pieza.
+     * 
+     * Se genera un vector de rotaciones, cada rotaci—n es una
+     * matriz de 4x4 que contiene en 0 y 1 la representaci—n de
+     * la pieza para esa rotaci—n.
+     * 
+     * @return un vector de matrices que representa la pieza.
+     */
+    protected abstract short[][][] getFormas();
+    
+    /**
+     * Toma el nœmero de rotaciones que tiene la pieza en s’.
+     * Esta es la dimensi—n del vector de matrices que retorna
+     * el mŽtodo <em>getFormas</em>.
+     * 
+     * @return el nœmero de rotaciones.
+     */
+    protected abstract int getRotaciones();
 }

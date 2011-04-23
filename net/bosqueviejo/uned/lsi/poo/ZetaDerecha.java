@@ -19,55 +19,26 @@ import java.awt.Graphics;
  */
 public class ZetaDerecha extends Pieza
 {
-    private int posicion;
-    private short[][][] formas = 
-    {
-        { 
-            { 0, 1, 1, 0 },
-            { 1, 1, 0, 0 },
-            { 0, 0, 0, 0 },
-            { 0, 0, 0, 0 }
-        },
+    protected short[][][] getFormas() {
+        short[][][] formas = 
         {
-            { 1, 0, 0, 0 },
-            { 1, 1, 0, 0 },
-            { 0, 1, 0, 0 },
-            { 0, 0, 0, 0 }
-
-        }
-    };
-
-    /**
-     * Constructor for objects of class EleDerecha
-     */
-    public ZetaDerecha() {
-        super();
-        posicion = 0;
+            { 
+                { 0, 1, 1, 0 },
+                { 1, 1, 0, 0 },
+                { 0, 0, 0, 0 },
+                { 0, 0, 0, 0 }
+            },
+            {
+                { 1, 0, 0, 0 },
+                { 1, 1, 0, 0 },
+                { 0, 1, 0, 0 },
+                { 0, 0, 0, 0 }
+            }
+        };
+        return formas;
     }
     
-    /**
-     * Rotaci—n de piezas.
-     */
-    public void rotar() {
-        posicion = (++posicion) % 2;
-    }
-    
-    /**
-     * Da la pieza en curso.
-     * 
-     * @return la pieza en formato de matriz de 4x4.
-     */
-    public short[][] toma() {
-        return formas[posicion];
-    }
-
-    /**
-     * Da la pieza siguiente.
-     * 
-     * @return la pieza en formato de matriz de 4x4.
-     */
-    public short[][] tomaSig() {
-        int posicion = (this.posicion+1) % 2;
-        return formas[posicion];
+    protected int getRotaciones() {
+        return 2;
     }
 }

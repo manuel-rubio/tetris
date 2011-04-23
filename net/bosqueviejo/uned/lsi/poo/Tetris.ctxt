@@ -1,4 +1,19 @@
 #BlueJ class context
-comment0.params=args
-comment0.target=void\ main(java.lang.String[])
-numComments=1
+comment0.params=
+comment0.target=Tetris()
+comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Tablero\n
+comment1.params=tablero\ s
+comment1.target=void\ setTablero(Tablero,\ int)
+comment2.params=g
+comment2.target=void\ paint(java.awt.Graphics)
+comment2.text=\n\ Dibuja\ el\ tablero,\ con\ todos\ los\ bloques\ y\ la\ pieza\ activa.\n\ \n\ @param\ g\ El\ elemento\ que\ permite\ dibujar.\n
+comment3.params=
+comment3.target=int\ otraVez()
+comment3.text=\n\ Realiza\ una\ pregunta\ de\ si\ quiere\ volver\ a\ jugar.\n\ \n\ @return\ un\ entero\ de\ tipo\ JOptionPane.YES_OPTION\ o\ JOptionPane.NO_OPTION.\n
+comment4.params=al
+comment4.target=void\ teclado(java.awt.event.KeyListener)
+comment4.text=\n\ Agrega\ la\ clase\ pasada\ como\ par\u00E1metro\ para\ el\ control\n\ de\ los\ eventos\ de\ teclado.\n\ \n\ @param\ al\ La\ clase\ que\ gestionar\u00E1\ los\ eventos\ de\ teclado.\n
+comment5.params=args
+comment5.target=void\ main(java.lang.String[])
+comment5.text=\n\ Inicia\ el\ juego\ en\ modo\ aplicaci\u00F3n\ de\ escritorio.\n
+numComments=6

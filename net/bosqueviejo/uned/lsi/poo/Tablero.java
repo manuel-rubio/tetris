@@ -1,14 +1,6 @@
 package net.bosqueviejo.uned.lsi.poo;
 
-import javax.swing.JFrame;
-import javax.swing.Timer;
-import javax.swing.JOptionPane;
-import java.awt.Graphics;
 import java.awt.Color;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyListener;
-import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
 
 /**
  * El tablero es la clase que se encarga de mantener
@@ -18,46 +10,29 @@ import java.awt.event.KeyEvent;
  * @author Manuel Ángel Rubio Jiménez
  * @version 2011-04-22
  */
-public class Tablero extends JFrame implements ActionListener, KeyListener
+public class Tablero
 {
     private int x;
     private int y;
-    private int s;
     
     private Color[][] tablero;
-    private Timer cron;
     
     private Pieza actual;
     private int xp;
     private int yp;
     
-    private final static int HEIGHT = 460;
-    private final static int WIDTH = 240;
-
     /**
      * Constructor for objects of class Tablero
      * 
      * @param x ancho del tablero.
      * @param y alto del tablero.
-     * @param s tamaño del bloque en píxeles.
      */
-    public Tablero( int x, int y, int s )
+    public Tablero( int x, int y )
     {
         this.x = x;
         this.y = y;
-        this.s = s;
         
         tablero = new Color[x][y];
-        
-        setTitle("Tetris");
-        setBounds(0,0,WIDTH,HEIGHT);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-        setVisible(true);
-        
-        cron = new Timer(500, this);
-        
-        addKeyListener(this);
     }
     
     /**
@@ -70,7 +45,6 @@ public class Tablero extends JFrame implements ActionListener, KeyListener
             }
         }
         setPieza(Pieza.factory());
-        cron.start();
     }
     
     /**
@@ -82,55 +56,39 @@ public class Tablero extends JFrame implements ActionListener, KeyListener
         xp = x / 2;
         yp = 0;
         this.actual = actual;
-        repaint();
     }
-    
+
     /**
-     * Dibuja el tablero, con todos los bloques y la pieza activa.
+     * Genera el tablero a dibujar y lo retorna.
      * 
-     * @param g El elemento que permite dibujar.
+     * @return el tablero a representar.
      */
-    public void paint(Graphics g) {
-        g.clearRect(0, 0, WIDTH, HEIGHT);
-        
-        // dibuja los cuadros internos
+    public Color[][] getTablero() {
+        Color[][] tablero = new Color[x][y];
         for (int i=0; i<x; i++) {
             for (int j=0; j<y; j++) {
-                g.setColor(tablero[i][j]);
-                if (tablero[i][j] != Color.BLACK) {
-                    g.fillRect((i*s)+20, (j*s)+40, s, s);
-                    g.setColor(tablero[i][j].darker());
-                    g.fillRect((i*s)+20+(s/4), (j*s)+40+(s/4), s/2, s/2);
-                    g.setColor(Color.BLACK);
-                }
-                g.drawRect((i*s)+20, (j*s)+40, s, s);
+                tablero[i][j] = this.tablero[i][j];
             }
         }
-        
-        // dibuja la pieza
         if (actual != null) {
-            int x = (xp*s)+20;
-            int y = (yp*s)+40;
-            short [][] forma = actual.toma();
-            for (int i=0; i<4; i++) {
-                for (int j=0; j<4; j++) {
-                    if (forma[i][j] == 1) {
-                        g.setColor(actual.getColor());
-                        g.fillRect(x+(j*s), y+(i*s), s, s);
-                        g.setColor(actual.getColor().darker());
-                        g.fillRect(x+(j*s)+(s/4), y+(i*s)+(s/4), s/2, s/2);
-                        g.setColor(Color.BLACK);
-                        g.drawRect(x+(j*s), y+(i*s), s, s);
-                    }
-                }
-            }
+            fijaPieza(tablero);
         }
+        return tablero;
     }
     
     /**
      * Se encarga de fijar la pieza al tablero.
      */
     public void fijaPieza() {
+        fijaPieza(tablero);
+    }
+
+    /**
+     * Fija la pieza en el tablero pasado como parámetro.
+     * 
+     * @param tablero El tablero en el que fijar la pieza actual.
+     */
+    private void fijaPieza( Color[][] tablero ) {
         short [][] forma = actual.toma();
         for (int i=0; i<4; i++) {
             for (int j=0; j<4; j++) {
@@ -139,7 +97,6 @@ public class Tablero extends JFrame implements ActionListener, KeyListener
                 }
             }
         }
-        repaint();
     }
 
     /**
@@ -153,7 +110,13 @@ public class Tablero extends JFrame implements ActionListener, KeyListener
     public void desplazaPieza(int x, int y) {
         yp += y;
         xp += x;
-        repaint();
+    }
+    
+    /**
+     * Rota la pieza actual.
+     */
+    public void rotarPieza() {
+        actual.rotar();
     }
 
     /**
@@ -252,32 +215,6 @@ public class Tablero extends JFrame implements ActionListener, KeyListener
     }
     
     /**
-     * Avanza la pieza abajo en el tablero. Comprueba también si se puede avanzar con la pieza,
-     * sino, pregunta si quiere reiniciar el juego y puede terminar o volver a comenzar.
-     */
-    public void bajaPieza() {
-        if (!colisionAbajo()) {
-            desplazaPieza(0,1);
-        } else {
-            fijaPieza();
-            limpiaLineas();
-            setPieza(Pieza.factory());
-            if (colisionAbajo()) {
-                cron.stop();
-                int confirm = JOptionPane.showConfirmDialog(
-                    this, "Se acabó el juego\n¿Quiere volver a jugar?",
-				    "Tetris", JOptionPane.YES_NO_OPTION
-				);
-				if (confirm == JOptionPane.YES_OPTION) {
-				    reinicia();
-				} else {
-				    System.exit(0);
-				}
-            }
-        }
-    }
-    
-    /**
      * Elimina del tablero las líneas completas.
      */
     public void limpiaLineas() {
@@ -299,42 +236,5 @@ public class Tablero extends JFrame implements ActionListener, KeyListener
                 }
             }
         }    
-    }
-    
-    /**
-     * Se encarga de tomar los eventos del Timer.
-     */
-    public void actionPerformed(ActionEvent e) {
-        bajaPieza();
-    }
-    
-    public void keyTyped ( KeyEvent e ) {
-    }
-
-    public void keyPressed ( KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_RIGHT:
-                if (!colisionDerecha()) {
-                    desplazaPieza(1,0);
-                }
-                break;
-            case KeyEvent.VK_LEFT:
-                if (!colisionIzquierda()) {
-                    desplazaPieza(-1,0);
-                }
-                break;
-            case KeyEvent.VK_UP:
-                if (!colisionGiro()) {
-                    actual.rotar();
-                    repaint();
-                }
-                break;
-            case KeyEvent.VK_DOWN:
-                bajaPieza();
-                break;
-        }
-    }
-    
-    public void keyReleased ( KeyEvent e ) {
     }
 }
