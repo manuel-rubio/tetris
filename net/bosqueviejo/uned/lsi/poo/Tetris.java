@@ -6,6 +6,9 @@ import javax.swing.JOptionPane;
 import java.awt.Graphics;
 import java.awt.Color;
 import java.awt.event.KeyListener;
+import java.awt.Graphics2D;
+import java.awt.image.BufferStrategy;
+
 
 /**
  * Se encarga de generar el entorno para su ejecuci—n como
@@ -19,6 +22,8 @@ public class Tetris extends JFrame implements ZonaJuego
     private Tablero tablero;   //!< Tablero de juego.
     private int ysize;         //!< Tama–o de la zona de juego en p’xeles en el eje Y.
     private int xsize;         //!< Tama–o de la zona de juego en p’xeles en el eje X.
+
+    private BufferStrategy strategy;
     
     /**
      * Constructor for objects of class Tablero
@@ -36,6 +41,7 @@ public class Tetris extends JFrame implements ZonaJuego
         
         // genera la estrategia para el doble-buffer
         createBufferStrategy(2);
+        strategy = getBufferStrategy();
     }
     
     /**
@@ -53,8 +59,11 @@ public class Tetris extends JFrame implements ZonaJuego
      * 
      * @param g El elemento que permite dibujar.
      */
-    public void paint(Graphics g) {
+    public void paint(Graphics gr) {
         int s = SIZE_BLOCKS;
+        Graphics2D g;
+
+        g = (strategy == null) ? (Graphics2D) gr : (Graphics2D) strategy.getDrawGraphics();
         g.clearRect(0, 0, xsize, ysize);
         
         // dibuja los cuadros internos
@@ -72,6 +81,10 @@ public class Tetris extends JFrame implements ZonaJuego
                     g.drawRect((i*s)+SIZE_BLOCKS, (j*s)+(SIZE_BLOCKS*2), s, s);
                 }
             }
+        }
+        if (strategy != null) {
+            g.dispose();
+            strategy.show();
         }
     }
     
