@@ -52,4 +52,13 @@ public class Cuadrado extends Pieza
     protected int getRotaciones() {
         return 1;
     }
+
+    /**
+     * Toma el color de la pieza actual.
+     * 
+     * @return el color de la pieza.
+     */
+    public Color getColor() {
+        return Color.YELLOW;
+    }
 }

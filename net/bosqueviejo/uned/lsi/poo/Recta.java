@@ -60,4 +60,13 @@ public class Recta extends Pieza
     protected int getRotaciones() {
         return 2;
     }
+
+    /**
+     * Toma el color de la pieza actual.
+     * 
+     * @return el color de la pieza.
+     */
+    public Color getColor() {
+        return Color.CYAN;
+    }
 }

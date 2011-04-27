@@ -12,7 +12,6 @@ import java.util.Random;
  */
 public abstract class Pieza
 {
-    private Color color;  //!< Color de la pieza.
     private int posicion; //!< Posici—n de rotaci—n de la pieza.
     
     /**
@@ -29,14 +28,6 @@ public abstract class Pieza
     };
     
     /**
-     * Colores que se pueden usar para la creaci—n de las piezas.
-     */
-    private static Color[] colores = {
-        Color.RED, Color.BLUE, Color.GREEN,
-        Color.ORANGE, Color.YELLOW
-    };
-    
-    /**
      * Generador de nœmeros aleatorios.
      */
     private static Random random = new Random(new Date().getTime());
@@ -46,7 +37,6 @@ public abstract class Pieza
      * aleatoria para la pieza.
      */
     public Pieza() {
-        color = colores[random.nextInt(colores.length)];
         posicion = 0;
     }
 
@@ -81,9 +71,7 @@ public abstract class Pieza
      * 
      * @return el color de la pieza.
      */
-    public Color getColor() {
-        return color;
-    }
+    abstract public Color getColor();
     
     /**
      * Genera una pieza aleatoriamente y con color aleatorio.

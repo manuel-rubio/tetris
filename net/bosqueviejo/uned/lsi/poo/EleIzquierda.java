@@ -71,4 +71,13 @@ public class EleIzquierda extends Pieza
     protected int getRotaciones() {
         return 4;
     }
+
+    /**
+     * Toma el color de la pieza actual.
+     * 
+     * @return el color de la pieza.
+     */
+    public Color getColor() {
+        return Color.ORANGE;
+    }
 }

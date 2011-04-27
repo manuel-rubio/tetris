@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.params=
 comment0.target=void\ repaint()
-comment0.text=\n\ M\u00E9todo\ intr\u00EDnseco\ para\ los\ JFrame\ y\ Applet,\ que\ se\ encarga\n\ de\ redibujar\ la\ pantalla\ llamando\ al\ m\u00E9todo\ <em>paint</em>.\n
+comment0.text=\r\n\ M\u017Dtodo\ intr\u2019nseco\ para\ los\ JFrame\ y\ Applet,\ que\ se\ encarga\r\n\ de\ redibujar\ la\ pantalla\ llamando\ al\ m\u017Dtodo\ <em>paint</em>.\r\n
 comment1.params=
 comment1.target=int\ otraVez()
-comment1.text=\n\ Realiza\ una\ pregunta\ de\ si\ quiere\ volver\ a\ jugar.\n\ \n\ @return\ un\ entero\ de\ tipo\ JOptionPane.YES_OPTION\ o\ JOptionPane.NO_OPTION.\n
+comment1.text=\r\n\ Realiza\ una\ pregunta\ de\ si\ quiere\ volver\ a\ jugar.\r\n\ \r\n\ @return\ un\ entero\ de\ tipo\ JOptionPane.YES_OPTION\ o\ JOptionPane.NO_OPTION.\r\n
 comment2.params=tablero
 comment2.target=void\ setTablero(Tablero)
-comment2.text=\n\ Configura\ el\ Tablero\ sobre\ el\ que\ se\ jugar\u00E1.\ A\ este\ tablero\ se\ le\ pedir\u00E1\ la\ informaci\u00F3n\n\ para\ redibujar\ la\ pantalla\ cada\ vez\ que\ se\ requiera.\n\ \n\ @param\ tablero\ el\ tablero\ que\ se\ dibujar\u00E1\ en\ la\ pantalla.\n
+comment2.text=\r\n\ Configura\ el\ Tablero\ sobre\ el\ que\ se\ jugar\u2021.\ A\ este\ tablero\ se\ le\ pedir\u2021\ la\ informaci\u2014n\r\n\ para\ redibujar\ la\ pantalla\ cada\ vez\ que\ se\ requiera.\r\n\ \r\n\ @param\ tablero\ el\ tablero\ que\ se\ dibujar\u2021\ en\ la\ pantalla.\r\n
 comment3.params=al
 comment3.target=void\ teclado(java.awt.event.KeyListener)
-comment3.text=\n\ Agrega\ la\ clase\ pasada\ como\ par\u00E1metro\ para\ el\ control\n\ de\ los\ eventos\ de\ teclado.\n\ \n\ @param\ al\ La\ clase\ que\ gestionar\u00E1\ los\ eventos\ de\ teclado.\n
+comment3.text=\r\n\ Agrega\ la\ clase\ pasada\ como\ par\u2021metro\ para\ el\ control\r\n\ de\ los\ eventos\ de\ teclado.\r\n\ \r\n\ @param\ al\ La\ clase\ que\ gestionar\u2021\ los\ eventos\ de\ teclado.\r\n
 numComments=4
