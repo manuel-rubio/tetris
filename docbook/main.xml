@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "../dtd/docbookx.dtd" [
+    <!ENTITY bookinfo SYSTEM "signature.xml">
+]>
+<book lang="es">
+
+    &bookinfo;
+
+    <chapter>
+        <title>.</title>
+
+		<para>.</para>
+	</chapter>
+</book>
