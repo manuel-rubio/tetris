@@ -8,35 +8,44 @@ import java.awt.Color;
 import java.awt.event.KeyListener;
 
 /**
- * La Ventana se encarga de la E/S de
- * información.
+ * Se encarga de generar el entorno para su ejecución como
+ * aplicación de escritorio.
  * 
  * @author Manuel Ángel Rubio Jiménez
  * @version 2011-04-22
  */
 public class Tetris extends JFrame implements ZonaJuego
 {
-    private int s;
-    private Tablero tablero;
+    private Tablero tablero;   //!< Tablero de juego.
+    private int ysize;         //!< Tamaño de la zona de juego en píxeles en el eje Y.
+    private int xsize;         //!< Tamaño de la zona de juego en píxeles en el eje X.
     
-    public final static int HEIGHT = 460;
-    public final static int WIDTH = 240;
-
     /**
      * Constructor for objects of class Tablero
      */
     public Tetris()
     {
+        xsize = ZonaJuego.X_BLOCKS * ZonaJuego.SIZE_BLOCKS + ZonaJuego.SIZE_BLOCKS * 2;
+        ysize = ZonaJuego.Y_BLOCKS * ZonaJuego.SIZE_BLOCKS + ZonaJuego.SIZE_BLOCKS * 3;
+
         setTitle("Tetris");
-        setBounds(0,0,WIDTH,HEIGHT);
+        setBounds(0,0,xsize,ysize);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(false);
         setVisible(true);
+        
+        // genera la estrategia para el doble-buffer
+        createBufferStrategy(2);
     }
     
-    public void setTablero( Tablero tablero, int s ) {
+    /**
+     * Configura el Tablero sobre el que se jugará. A este tablero se le pedirá la información
+     * para redibujar la pantalla cada vez que se requiera.
+     * 
+     * @param tablero el tablero que se dibujará en la pantalla.
+     */
+    public void setTablero( Tablero tablero ) {
         this.tablero = tablero;
-        this.s = s;
     }
     
     /**
@@ -45,7 +54,8 @@ public class Tetris extends JFrame implements ZonaJuego
      * @param g El elemento que permite dibujar.
      */
     public void paint(Graphics g) {
-        g.clearRect(0, 0, WIDTH, HEIGHT);
+        int s = SIZE_BLOCKS;
+        g.clearRect(0, 0, xsize, ysize);
         
         // dibuja los cuadros internos
         if (this.tablero != null) {
@@ -54,12 +64,12 @@ public class Tetris extends JFrame implements ZonaJuego
                 for (int j=0; j<tablero[i].length; j++) {
                     g.setColor(tablero[i][j]);
                     if (tablero[i][j] != Color.BLACK) {
-                        g.fillRect((i*s)+20, (j*s)+40, s, s);
+                        g.fillRect((i*s)+SIZE_BLOCKS, (j*s)+(SIZE_BLOCKS*2), s, s);
                         g.setColor(tablero[i][j].darker());
-                        g.fillRect((i*s)+20+(s/4), (j*s)+40+(s/4), s/2, s/2);
+                        g.fillRect((i*s)+SIZE_BLOCKS+(s/4), (j*s)+(SIZE_BLOCKS*2)+(s/4), s/2, s/2);
                         g.setColor(Color.BLACK);
                     }
-                    g.drawRect((i*s)+20, (j*s)+40, s, s);
+                    g.drawRect((i*s)+SIZE_BLOCKS, (j*s)+(SIZE_BLOCKS*2), s, s);
                 }
             }
         }
@@ -92,7 +102,7 @@ public class Tetris extends JFrame implements ZonaJuego
      */
     public static void main( String[] args ) {
         Tetris tetris = new Tetris();
-        Juego juego = new Juego(10, 20, 20, tetris);
+        Juego juego = new Juego(tetris);
         juego.reinicia();
     }
 

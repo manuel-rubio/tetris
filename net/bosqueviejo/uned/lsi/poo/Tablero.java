@@ -12,14 +12,14 @@ import java.awt.Color;
  */
 public class Tablero
 {
-    private int x;
-    private int y;
+    private int x; //!< Tama–o del tablero en el eje X.
+    private int y; //!< Tama–o del tablero en el eje Y.
     
-    private Color[][] tablero;
+    private Color[][] tablero; //!< Contenido del tablero.
     
-    private Pieza actual;
-    private int xp;
-    private int yp;
+    private Pieza actual; //!< La pieza que hay en juego.
+    private int xp; //!< Posici—n en el eje X de la pieza en juego.
+    private int yp; //!< Posici—n en el eje Y de la pieza en juego.
     
     /**
      * Constructor for objects of class Tablero

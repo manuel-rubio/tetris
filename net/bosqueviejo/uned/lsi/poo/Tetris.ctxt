@@ -2,8 +2,9 @@
 comment0.params=
 comment0.target=Tetris()
 comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Tablero\n
-comment1.params=tablero\ s
-comment1.target=void\ setTablero(Tablero,\ int)
+comment1.params=tablero
+comment1.target=void\ setTablero(Tablero)
+comment1.text=\n\ Configura\ el\ Tablero\ sobre\ el\ que\ se\ jugar\u00E1.\ A\ este\ tablero\ se\ le\ pedir\u00E1\ la\ informaci\u00F3n\n\ para\ redibujar\ la\ pantalla\ cada\ vez\ que\ se\ requiera.\n\ \n\ @param\ tablero\ el\ tablero\ que\ se\ dibujar\u00E1\ en\ la\ pantalla.\n
 comment2.params=g
 comment2.target=void\ paint(java.awt.Graphics)
 comment2.text=\n\ Dibuja\ el\ tablero,\ con\ todos\ los\ bloques\ y\ la\ pieza\ activa.\n\ \n\ @param\ g\ El\ elemento\ que\ permite\ dibujar.\n

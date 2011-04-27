@@ -1,6 +1,6 @@
 #BlueJ class context
-comment0.params=x\ y\ s\ zonaJuego
-comment0.target=Juego(int,\ int,\ int,\ ZonaJuego)
+comment0.params=zonaJuego
+comment0.target=Juego(ZonaJuego)
 comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Tablero\n\ \n\ @param\ x\ ancho\ del\ tablero.\n\ @param\ y\ alto\ del\ tablero.\n\ @param\ s\ tama\u00F1o\ del\ bloque\ en\ p\u00EDxeles.\n
 comment1.params=
 comment1.target=void\ reinicia()
@@ -13,8 +13,11 @@ comment3.target=void\ actionPerformed(java.awt.event.ActionEvent)
 comment3.text=\n\ Se\ encarga\ de\ tomar\ los\ eventos\ del\ Timer.\n
 comment4.params=e
 comment4.target=void\ keyTyped(java.awt.event.KeyEvent)
+comment4.text=\n\ Cuando\ se\ presiona\ una\ tecla\ "escribible",\ se\ genera\ la\ llamada\ a\ este\ m\u00E9todo.\n\ En\ este\ programa\ no\ se\ usar\u00E1,\ pero\ es\ necesaria\ para\ KeyEvent.\n
 comment5.params=e
 comment5.target=void\ keyPressed(java.awt.event.KeyEvent)
+comment5.text=\n\ Gestiona\ las\ pulsaciones\ de\ las\ teclas.\ Este\ evento\ se\ usar\u00E1\ para\ cazar\ la\ pulsaci\u00F3n\n\ de\ los\ cursores\ de\ direcci\u00F3n\ y\ desplazar\ o\ girar\ la\ pieza\ en\ juego.\n\ \n\ @param\ e\ el\ evento\ que\ se\ genera.\ En\ \u00E9l\ vendr\u00E1\ si\ se\ ha\ generado\ una\ pulsaci\u00F3n\ de\ tecla\ u\ otra.\n
 comment6.params=e
 comment6.target=void\ keyReleased(java.awt.event.KeyEvent)
+comment6.text=\n\ Evento\ que\ se\ sucede\ cuando\ se\ deja\ de\ presionar\ una\ tecla.\ En\ este\ programa\ no\ se\ usar\u00E1,\ pero\n\ es\ necesaria\ su\ creaci\u00F3n\ para\ KeyEvent.\n
 numComments=7

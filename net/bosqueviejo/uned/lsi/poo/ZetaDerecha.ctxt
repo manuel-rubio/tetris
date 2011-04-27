@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=
 comment0.target=short[][][]\ getFormas()
+comment0.text=\n\ Obtiene\ las\ formas\ para\ la\ pieza.\ La\ cantidad\ de\ formas\n\ depender\u00E1\ de\ las\ rotaciones\ que\ tenga\ la\ pieza.\n\ \n\ Se\ genera\ un\ vector\ de\ rotaciones,\ cada\ rotaci\u00F3n\ es\ una\n\ matriz\ de\ 4x4\ que\ contiene\ en\ 0\ y\ 1\ la\ representaci\u00F3n\ de\n\ la\ pieza\ para\ esa\ rotaci\u00F3n.\n\ \n\ @return\ un\ vector\ de\ matrices\ que\ representa\ la\ pieza.\n
 comment1.params=
 comment1.target=int\ getRotaciones()
+comment1.text=\n\ Toma\ el\ n\u00FAmero\ de\ rotaciones\ que\ tiene\ la\ pieza\ en\ s\u00ED.\n\ Esta\ es\ la\ dimensi\u00F3n\ del\ vector\ de\ matrices\ que\ retorna\n\ el\ m\u00E9todo\ <em>getFormas</em>.\n\ \n\ @return\ el\ n\u00FAmero\ de\ rotaciones.\n
 numComments=2

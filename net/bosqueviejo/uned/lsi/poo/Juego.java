@@ -11,21 +11,17 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
 /**
- * La Ventana se encarga de la E/S de
- * información.
+ * La clase de Juego se encarga de la lógica propia del juego.
  * 
  * @author Manuel Ángel Rubio Jiménez
  * @version 2011-04-22
  */
 public class Juego implements ActionListener, KeyListener
 {
-    private Tablero tablero;
-    private ZonaJuego zonaJuego;
-    private Timer cron;
+    private Tablero tablero;      //!< Tablero sobre el que se jugará.
+    private ZonaJuego zonaJuego;  //!< La Zona de Juego (aplicación o applet)
+    private Timer cron;           //!< El generador de eventos de tiempo.
     
-    private final static int HEIGHT = 460;
-    private final static int WIDTH = 240;
-
     /**
      * Constructor for objects of class Tablero
      * 
@@ -33,14 +29,14 @@ public class Juego implements ActionListener, KeyListener
      * @param y alto del tablero.
      * @param s tamaño del bloque en píxeles.
      */
-    public Juego( int x, int y, int s, ZonaJuego zonaJuego )
+    public Juego( ZonaJuego zonaJuego )
     {
-        tablero = new Tablero(x,y);
+        tablero = new Tablero(ZonaJuego.X_BLOCKS,ZonaJuego.Y_BLOCKS);
         this.zonaJuego = zonaJuego;
-        zonaJuego.setTablero(tablero, s);
+        zonaJuego.setTablero(tablero);
         zonaJuego.teclado(this);
         
-        cron = new Timer(500, this);
+        cron = new Timer(ZonaJuego.TIME_FALL, this);
     }
     
     /**
@@ -82,10 +78,20 @@ public class Juego implements ActionListener, KeyListener
     public void actionPerformed(ActionEvent e) {
         bajaPieza();
     }
-    
+
+    /**
+     * Cuando se presiona una tecla "escribible", se genera la llamada a este método.
+     * En este programa no se usará, pero es necesaria para KeyEvent.
+     */
     public void keyTyped ( KeyEvent e ) {
     }
 
+    /**
+     * Gestiona las pulsaciones de las teclas. Este evento se usará para cazar la pulsación
+     * de los cursores de dirección y desplazar o girar la pieza en juego.
+     * 
+     * @param e el evento que se genera. En él vendrá si se ha generado una pulsación de tecla u otra.
+     */
     public void keyPressed ( KeyEvent e) {
         switch (e.getKeyCode()) {
             case KeyEvent.VK_RIGHT:
@@ -111,7 +117,11 @@ public class Juego implements ActionListener, KeyListener
                 break;
         }
     }
-    
+
+    /**
+     * Evento que se sucede cuando se deja de presionar una tecla. En este programa no se usará, pero
+     * es necesaria su creación para KeyEvent.
+     */
     public void keyReleased ( KeyEvent e ) {
     }
 }
