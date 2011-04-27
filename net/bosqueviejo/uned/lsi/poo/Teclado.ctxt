@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=juego
+comment0.target=Teclado(Juego)
+comment1.params=e
+comment1.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment2.params=e
+comment2.target=void\ keyTyped(java.awt.event.KeyEvent)
+comment2.text=\r\n\ Cuando\ se\ presiona\ una\ tecla\ "escribible",\ se\ genera\ la\ llamada\ a\ este\ m\u017Dtodo.\r\n\ En\ este\ programa\ no\ se\ usar\u2021,\ pero\ es\ necesaria\ para\ KeyEvent.\r\n
+comment3.params=e
+comment3.target=void\ keyPressed(java.awt.event.KeyEvent)
+comment3.text=\r\n\ Gestiona\ las\ pulsaciones\ de\ las\ teclas.\ Este\ evento\ se\ usar\u2021\ para\ cazar\ la\ pulsaci\u2014n\r\n\ de\ los\ cursores\ de\ direcci\u2014n\ y\ desplazar\ o\ girar\ la\ pieza\ en\ juego.\r\n\ \r\n\ @param\ e\ el\ evento\ que\ se\ genera.\ En\ \u017Dl\ vendr\u2021\ si\ se\ ha\ generado\ una\ pulsaci\u2014n\ de\ tecla\ u\ otra.\r\n
+comment4.params=e
+comment4.target=void\ keyReleased(java.awt.event.KeyEvent)
+numComments=5

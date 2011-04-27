@@ -1,20 +1,20 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Tetris()
-comment0.text=\n\ Constructor\ for\ objects\ of\ class\ Tablero\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Tablero\r\n
 comment1.params=tablero
 comment1.target=void\ setTablero(Tablero)
-comment1.text=\n\ Configura\ el\ Tablero\ sobre\ el\ que\ se\ jugar\u00E1.\ A\ este\ tablero\ se\ le\ pedir\u00E1\ la\ informaci\u00F3n\n\ para\ redibujar\ la\ pantalla\ cada\ vez\ que\ se\ requiera.\n\ \n\ @param\ tablero\ el\ tablero\ que\ se\ dibujar\u00E1\ en\ la\ pantalla.\n
-comment2.params=g
+comment1.text=\r\n\ Configura\ el\ Tablero\ sobre\ el\ que\ se\ jugar\u2021.\ A\ este\ tablero\ se\ le\ pedir\u2021\ la\ informaci\u2014n\r\n\ para\ redibujar\ la\ pantalla\ cada\ vez\ que\ se\ requiera.\r\n\ \r\n\ @param\ tablero\ el\ tablero\ que\ se\ dibujar\u2021\ en\ la\ pantalla.\r\n
+comment2.params=gr
 comment2.target=void\ paint(java.awt.Graphics)
-comment2.text=\n\ Dibuja\ el\ tablero,\ con\ todos\ los\ bloques\ y\ la\ pieza\ activa.\n\ \n\ @param\ g\ El\ elemento\ que\ permite\ dibujar.\n
+comment2.text=\r\n\ Dibuja\ el\ tablero,\ con\ todos\ los\ bloques\ y\ la\ pieza\ activa.\r\n\ \r\n\ @param\ g\ El\ elemento\ que\ permite\ dibujar.\r\n
 comment3.params=
 comment3.target=int\ otraVez()
-comment3.text=\n\ Realiza\ una\ pregunta\ de\ si\ quiere\ volver\ a\ jugar.\n\ \n\ @return\ un\ entero\ de\ tipo\ JOptionPane.YES_OPTION\ o\ JOptionPane.NO_OPTION.\n
+comment3.text=\r\n\ Realiza\ una\ pregunta\ de\ si\ quiere\ volver\ a\ jugar.\r\n\ \r\n\ @return\ un\ entero\ de\ tipo\ JOptionPane.YES_OPTION\ o\ JOptionPane.NO_OPTION.\r\n
 comment4.params=al
 comment4.target=void\ teclado(java.awt.event.KeyListener)
-comment4.text=\n\ Agrega\ la\ clase\ pasada\ como\ par\u00E1metro\ para\ el\ control\n\ de\ los\ eventos\ de\ teclado.\n\ \n\ @param\ al\ La\ clase\ que\ gestionar\u00E1\ los\ eventos\ de\ teclado.\n
+comment4.text=\r\n\ Agrega\ la\ clase\ pasada\ como\ par\u2021metro\ para\ el\ control\r\n\ de\ los\ eventos\ de\ teclado.\r\n\ \r\n\ @param\ al\ La\ clase\ que\ gestionar\u2021\ los\ eventos\ de\ teclado.\r\n
 comment5.params=args
 comment5.target=void\ main(java.lang.String[])
-comment5.text=\n\ Inicia\ el\ juego\ en\ modo\ aplicaci\u00F3n\ de\ escritorio.\n
+comment5.text=\r\n\ Inicia\ el\ juego\ en\ modo\ aplicaci\u2014n\ de\ escritorio.\r\n
 numComments=6

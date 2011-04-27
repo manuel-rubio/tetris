@@ -16,7 +16,7 @@ import java.awt.event.KeyEvent;
  * @author Manuel Ángel Rubio Jiménez
  * @version 2011-04-22
  */
-public class Juego implements ActionListener, KeyListener
+public class Juego implements ActionListener
 {
     private Tablero tablero;      //!< Tablero sobre el que se jugará.
     private ZonaJuego zonaJuego;  //!< La Zona de Juego (aplicación o applet)
@@ -34,7 +34,7 @@ public class Juego implements ActionListener, KeyListener
         tablero = new Tablero(ZonaJuego.X_BLOCKS,ZonaJuego.Y_BLOCKS);
         this.zonaJuego = zonaJuego;
         zonaJuego.setTablero(tablero);
-        zonaJuego.teclado(this);
+        zonaJuego.teclado(new Teclado(this));
         
         cron = new Timer(ZonaJuego.TIME_FALL, this);
     }
@@ -71,57 +71,29 @@ public class Juego implements ActionListener, KeyListener
             }
         }
     }
+
+    public void mueveDerPieza() {
+        if (!tablero.colisionDerecha()) {
+            tablero.desplazaPieza(1,0);
+            zonaJuego.repaint();
+        }
+    }
     
-    /**
-     * Se encarga de tomar los eventos del Timer.
-     */
-    public void actionPerformed(ActionEvent e) {
-        bajaPieza();
+    public void mueveIzqPieza() {
+        if (!tablero.colisionIzquierda()) {
+            tablero.desplazaPieza(-1,0);
+            zonaJuego.repaint();
+        }
     }
-
-    /**
-     * Cuando se presiona una tecla "escribible", se genera la llamada a este método.
-     * En este programa no se usará, pero es necesaria para KeyEvent.
-     */
-    public void keyTyped ( KeyEvent e ) {
-    }
-
-    /**
-     * Gestiona las pulsaciones de las teclas. Este evento se usará para cazar la pulsación
-     * de los cursores de dirección y desplazar o girar la pieza en juego.
-     * 
-     * @param e el evento que se genera. En él vendrá si se ha generado una pulsación de tecla u otra.
-     */
-    public void keyPressed ( KeyEvent e) {
-        switch (e.getKeyCode()) {
-            case KeyEvent.VK_RIGHT:
-                if (!tablero.colisionDerecha()) {
-                    tablero.desplazaPieza(1,0);
-                    zonaJuego.repaint();
-                }
-                break;
-            case KeyEvent.VK_LEFT:
-                if (!tablero.colisionIzquierda()) {
-                    tablero.desplazaPieza(-1,0);
-                    zonaJuego.repaint();
-                }
-                break;
-            case KeyEvent.VK_UP:
-                if (!tablero.colisionGiro()) {
-                    tablero.rotarPieza();
-                    zonaJuego.repaint();
-                }
-                break;
-            case KeyEvent.VK_DOWN:
-                bajaPieza();
-                break;
+    
+    public void giraPieza() {
+        if (!tablero.colisionGiro()) {
+            tablero.rotarPieza();
+            zonaJuego.repaint();
         }
     }
 
-    /**
-     * Evento que se sucede cuando se deja de presionar una tecla. En este programa no se usará, pero
-     * es necesaria su creación para KeyEvent.
-     */
-    public void keyReleased ( KeyEvent e ) {
+    public void actionPerformed(ActionEvent e) {
+        bajaPieza();
     }
 }
