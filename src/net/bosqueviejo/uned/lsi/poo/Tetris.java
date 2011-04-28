@@ -57,7 +57,7 @@ public class Tetris extends JFrame implements ZonaJuego
     /**
      * Dibuja el tablero, con todos los bloques y la pieza activa.
      * 
-     * @param g El elemento que permite dibujar.
+     * @param gr El elemento que permite dibujar.
      */
     public void paint(Graphics gr) {
         int s = SIZE_BLOCKS;

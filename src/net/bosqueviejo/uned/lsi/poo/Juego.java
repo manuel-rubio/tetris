@@ -25,9 +25,7 @@ public class Juego implements ActionListener
     /**
      * Constructor for objects of class Tablero
      * 
-     * @param x ancho del tablero.
-     * @param y alto del tablero.
-     * @param s tamaño del bloque en píxeles.
+     * @param zonaJuego la zona donde se jugará.
      */
     public Juego( ZonaJuego zonaJuego )
     {
