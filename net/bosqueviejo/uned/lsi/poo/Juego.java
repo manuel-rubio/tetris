@@ -11,15 +11,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 
 /**
- * La clase de Juego se encarga de la lógica propia del juego.
+ * La clase de Juego se encarga de la l√≥gica propia del juego.
  * 
- * @author Manuel Ángel Rubio Jiménez
+ * @author Manuel √Ångel Rubio Jim√©nez
  * @version 2011-04-22
  */
 public class Juego implements ActionListener
 {
-    private Tablero tablero;      //!< Tablero sobre el que se jugará.
-    private ZonaJuego zonaJuego;  //!< La Zona de Juego (aplicación o applet)
+    private Tablero tablero;      //!< Tablero sobre el que se jugar√°.
+    private ZonaJuego zonaJuego;  //!< La Zona de Juego (aplicaci√≥n o applet)
     private Timer cron;           //!< El generador de eventos de tiempo.
     
     /**
@@ -27,7 +27,7 @@ public class Juego implements ActionListener
      * 
      * @param x ancho del tablero.
      * @param y alto del tablero.
-     * @param s tamaño del bloque en píxeles.
+     * @param s tama√±o del bloque en p√≠xeles.
      */
     public Juego( ZonaJuego zonaJuego )
     {
@@ -48,7 +48,7 @@ public class Juego implements ActionListener
     }
     
     /**
-     * Avanza la pieza abajo en el tablero. Comprueba también si se puede avanzar con la pieza,
+     * Avanza la pieza abajo en el tablero. Comprueba tambi√©n si se puede avanzar con la pieza,
      * sino, pregunta si quiere reiniciar el juego y puede terminar o volver a comenzar.
      */
     public void bajaPieza() {
@@ -72,20 +72,32 @@ public class Juego implements ActionListener
         }
     }
 
+    /**
+     * Mueve la pieza a la derecha. Se encarga de desplazar la pieza hacia la derecha,
+     * asegur√°ndose antes de si el movimiento es posible o no.
+     */
     public void mueveDerPieza() {
         if (!tablero.colisionDerecha()) {
             tablero.desplazaPieza(1,0);
             zonaJuego.repaint();
         }
     }
-    
+
+    /**
+     * Mueve la pieza a la izquierda. Se encarga de desplazar la pieza hacia la izquierda,
+     * asegur√°ndose antes de si el movimiento es posible o no.
+     */
     public void mueveIzqPieza() {
         if (!tablero.colisionIzquierda()) {
             tablero.desplazaPieza(-1,0);
             zonaJuego.repaint();
         }
     }
-    
+
+    /**
+     * Gira la pieza en el sentido de las agujas del reloj. Se encarga de girar la pieza,
+     * asegur√°ndose antes de si el movimiento es posible o no.
+     */
     public void giraPieza() {
         if (!tablero.colisionGiro()) {
             tablero.rotarPieza();
@@ -93,6 +105,11 @@ public class Juego implements ActionListener
         }
     }
 
+    /**
+     * Escucha el evento del reloj para ir desplazando la pieza hacia la base del tablero. Cada
+     * vez que el reloj genera un evento, realiza la acci√≥n de bajar la pieza, asegur√°ndose
+     * de que pueda ser desplazada hacia abajo.
+     */
     public void actionPerformed(ActionEvent e) {
         bajaPieza();
     }

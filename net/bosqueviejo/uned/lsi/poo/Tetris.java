@@ -11,19 +11,19 @@ import java.awt.image.BufferStrategy;
 
 
 /**
- * Se encarga de generar el entorno para su ejecución como
- * aplicación de escritorio.
+ * Se encarga de generar el entorno para su ejecuci√≥n como
+ * aplicaci√≥n de escritorio.
  * 
- * @author Manuel Ángel Rubio Jiménez
+ * @author Manuel √Ångel Rubio Jim√©nez
  * @version 2011-04-22
  */
 public class Tetris extends JFrame implements ZonaJuego
 {
     private Tablero tablero;   //!< Tablero de juego.
-    private int ysize;         //!< Tamaño de la zona de juego en píxeles en el eje Y.
-    private int xsize;         //!< Tamaño de la zona de juego en píxeles en el eje X.
+    private int ysize;         //!< Tama√±o de la zona de juego en p√≠xeles en el eje Y.
+    private int xsize;         //!< Tama√±o de la zona de juego en p√≠xeles en el eje X.
 
-    private BufferStrategy strategy;
+    private BufferStrategy strategy; //!< Crea la estrategia de buffering, para evitar el parpadeo.
     
     /**
      * Constructor for objects of class Tablero
@@ -45,10 +45,10 @@ public class Tetris extends JFrame implements ZonaJuego
     }
     
     /**
-     * Configura el Tablero sobre el que se jugará. A este tablero se le pedirá la información
+     * Configura el Tablero sobre el que se jugar√°. A este tablero se le pedir√° la informaci√≥n
      * para redibujar la pantalla cada vez que se requiera.
      * 
-     * @param tablero el tablero que se dibujará en la pantalla.
+     * @param tablero el tablero que se dibujar√° en la pantalla.
      */
     public void setTablero( Tablero tablero ) {
         this.tablero = tablero;
@@ -95,23 +95,23 @@ public class Tetris extends JFrame implements ZonaJuego
      */
     public int otraVez() {
         return JOptionPane.showConfirmDialog(
-            this, "Se acabó el juego\n¿Quiere volver a jugar?",
+            this, "Se acab√≥ el juego\n¬øQuiere volver a jugar?",
             "Tetris", JOptionPane.YES_NO_OPTION
         );
     }
     
     /**
-     * Agrega la clase pasada como parámetro para el control
+     * Agrega la clase pasada como par√°metro para el control
      * de los eventos de teclado.
      * 
-     * @param al La clase que gestionará los eventos de teclado.
+     * @param al La clase que gestionar√° los eventos de teclado.
      */
     public void teclado( KeyListener al ) {
         addKeyListener(al);
     }
     
     /**
-     * Inicia el juego en modo aplicación de escritorio.
+     * Inicia el juego en modo aplicaci√≥n de escritorio.
      */
     public static void main( String[] args ) {
         Tetris tetris = new Tetris();

@@ -4,22 +4,22 @@ import java.awt.Color;
 
 /**
  * El tablero es la clase que se encarga de mantener
- * los bloques en la pantalla, suprime las l’neas, y
+ * los bloques en la pantalla, suprime las lÃ­neas, y
  * se encarga del redibujado del tablero
  * 
- * @author Manuel çngel Rubio JimŽnez
+ * @author Manuel Ãngel Rubio JimÃ©nez
  * @version 2011-04-22
  */
 public class Tablero
 {
-    private int x; //!< Tama–o del tablero en el eje X.
-    private int y; //!< Tama–o del tablero en el eje Y.
+    private int x; //!< TamaÃ±o del tablero en el eje X.
+    private int y; //!< TamaÃ±o del tablero en el eje Y.
     
     private Color[][] tablero; //!< Contenido del tablero.
     
     private Pieza actual; //!< La pieza que hay en juego.
-    private int xp; //!< Posici—n en el eje X de la pieza en juego.
-    private int yp; //!< Posici—n en el eje Y de la pieza en juego.
+    private int xp; //!< PosiciÃ³n en el eje X de la pieza en juego.
+    private int yp; //!< PosiciÃ³n en el eje Y de la pieza en juego.
     
     /**
      * Constructor for objects of class Tablero
@@ -50,7 +50,7 @@ public class Tablero
     /**
      * Asigna la pieza activa.
      * 
-     * @param actual La pieza que se pasa por par‡metro para asignar como activa.
+     * @param actual La pieza que se pasa por parÃ¡metro para asignar como activa.
      */
     public void setPieza( Pieza actual ) {
         xp = x / 2;
@@ -84,7 +84,7 @@ public class Tablero
     }
 
     /**
-     * Fija la pieza en el tablero pasado como par‡metro.
+     * Fija la pieza en el tablero pasado como parÃ¡metro.
      * 
      * @param tablero El tablero en el que fijar la pieza actual.
      */
@@ -100,7 +100,7 @@ public class Tablero
     }
 
     /**
-     * Desplaza la pieza de forma relativa a su posici—n actual,
+     * Desplaza la pieza de forma relativa a su posiciÃ³n actual,
      * con lo que se pueden dar valores positivos, negativos, 
      * o cero si no se desea desplazar.
      * 
@@ -146,7 +146,7 @@ public class Tablero
      * Comprueba si avanzando hacia la derecha se puede, comprobando las piezas que haya,
      * y el borde del final del tablero por la derecha.
      * 
-     * @return verdadero si hay colisi—n, falso en caso contrario.
+     * @return verdadero si hay colisiÃ³n, falso en caso contrario.
      */
     public boolean colisionDerecha() {
         short [][] forma = actual.toma();
@@ -169,7 +169,7 @@ public class Tablero
      * Comprueba si avanzando hacia la izquierda se puede, comprobando las piezas que haya,
      * y el borde del final del tablero por la izquierda.
      * 
-     * @return verdadero si hay colisi—n, falso en caso contrario.
+     * @return verdadero si hay colisiÃ³n, falso en caso contrario.
      */
     public boolean colisionIzquierda() {
         short [][] forma = actual.toma();
@@ -215,7 +215,7 @@ public class Tablero
     }
     
     /**
-     * Elimina del tablero las l’neas completas.
+     * Elimina del tablero las lÃ­neas completas.
      */
     public void limpiaLineas() {
         int i, j, k = 0;
@@ -235,6 +235,6 @@ public class Tablero
                     tablero[a][0] = Color.BLACK;
                 }
             }
-        }    
+        }
     }
 }

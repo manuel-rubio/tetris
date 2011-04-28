@@ -5,17 +5,17 @@ import java.awt.event.KeyListener;
 import javax.swing.*;
 
 /**
- * Manejador que permite visualizar la aplicación
- * dentro de un applet en una página web.
+ * Manejador que permite visualizar la aplicaci√≥n
+ * dentro de un applet en una p√°gina web.
  * 
- * @author Manuel Ángel Rubio Jiménez
+ * @author Manuel √Ångel Rubio Jim√©nez
  * @version 2011-04-22
  */
 public class Web extends JApplet implements ZonaJuego
 {
     private Tablero tablero;   //!< Tablero de juego.
-    private int ysize;         //!< Tamaño de la zona de juego en píxeles en el eje Y.
-    private int xsize;         //!< Tamaño de la zona de juego en píxeles en el eje X.
+    private int ysize;         //!< Tama√±o de la zona de juego en p√≠xeles en el eje Y.
+    private int xsize;         //!< Tama√±o de la zona de juego en p√≠xeles en el eje X.
 
     // elementos para el doble-buffer
     private Image offScreen;
@@ -141,7 +141,7 @@ public class Web extends JApplet implements ZonaJuego
     /**
      * Agrega un listener para el control del teclado.
      * 
-     * @param al objeto que controlará los eventos del teclado.
+     * @param al objeto que controlar√° los eventos del teclado.
      */
     public void teclado( KeyListener al ) {
         addKeyListener(al);
@@ -149,7 +149,7 @@ public class Web extends JApplet implements ZonaJuego
 
     /**
      * Pregunta si el juego debe comenzar otra vez. En este caso,
-     * como del applet no se puede salir, se mandará a que reinicie el juego de forma
+     * como del applet no se puede salir, se mandar√° a que reinicie el juego de forma
      * reiterada.
      * 
      * @return siempre responde YES_OPTION.
@@ -159,10 +159,10 @@ public class Web extends JApplet implements ZonaJuego
     }
 
     /**
-     * Configura el Tablero sobre el que se jugará. A este tablero se le pedirá la información
+     * Configura el Tablero sobre el que se jugar√°. A este tablero se le pedir√° la informaci√≥n
      * para redibujar la pantalla cada vez que se requiera.
      * 
-     * @param tablero el tablero que se dibujará en la pantalla.
+     * @param tablero el tablero que se dibujar√° en la pantalla.
      */
     public void setTablero( Tablero tablero ) {
         this.tablero = tablero;

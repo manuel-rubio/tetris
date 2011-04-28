@@ -14,7 +14,7 @@ import java.awt.Graphics;
  *  +-   ++
  *       |
  * </pre>
- * @author Manuel Ángel Rubio Jiménez
+ * @author Manuel √Ångel Rubio Jim√©nez
  * @version 2011-04-22
  */
 public class ZetaIzquierda extends Pieza
@@ -22,11 +22,11 @@ public class ZetaIzquierda extends Pieza
 
     /**
      * Obtiene las formas para la pieza. La cantidad de formas
-     * dependerá de las rotaciones que tenga la pieza.
+     * depender√° de las rotaciones que tenga la pieza.
      * 
-     * Se genera un vector de rotaciones, cada rotación es una
-     * matriz de 4x4 que contiene en 0 y 1 la representación de
-     * la pieza para esa rotación.
+     * Se genera un vector de rotaciones, cada rotaci√≥n es una
+     * matriz de 4x4 que contiene en 0 y 1 la representaci√≥n de
+     * la pieza para esa rotaci√≥n.
      * 
      * @return un vector de matrices que representa la pieza.
      */
@@ -50,11 +50,11 @@ public class ZetaIzquierda extends Pieza
     }
     
     /**
-     * Toma el número de rotaciones que tiene la pieza en sí.
-     * Esta es la dimensión del vector de matrices que retorna
-     * el método <em>getFormas</em>.
+     * Toma el n√∫mero de rotaciones que tiene la pieza en s√≠.
+     * Esta es la dimensi√≥n del vector de matrices que retorna
+     * el m√©todo <em>getFormas</em>.
      * 
-     * @return el número de rotaciones.
+     * @return el n√∫mero de rotaciones.
      */
     protected int getRotaciones() {
         return 2;
