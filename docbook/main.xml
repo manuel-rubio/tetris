@@ -1,14 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "../dtd/docbookx.dtd" [
-    <!ENTITY bookinfo SYSTEM "signature.xml">
-]>
+<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.2//EN" "../dtd/docbookx.dtd">
 <book lang="es">
 
-    &bookinfo;
+	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="signature.xml" />
 
-    <chapter>
-        <title>.</title>
+    <preface>
+        <title>Introducción</title>
 
+		<para>Este documento responde al requisito de documentación presente en la práctica de la asignatura de Programación Orientada a Objetos, impartida en los estudios de Grado en Ingeniería Informática de la UNED.</para>
+		
+		<para>La práctica consiste en implementar el juego Tetris, en su nivel más básico, y empleando una estructura orientada a objetos en la que se emplee herencia, agregación, composición y otros elementos propios de la orientación a objetos.</para>
+	</preface>
+	<chapter>
+		<title>Inicio Rápido</title>
+		
+		<para>Como la evaluación de la práctica consiste, principalmente, en que funcione. En este apartado voy a dar instrucciones básicas de cómo hacer la ejecución de la práctica en todos los ámbitos en los que se ha probado.</para>
+		
+		<section>
+			<title>Ant</title>
+			
+			<para>Lo más simple, es entrar a nivel de consola y ejecutar <emphasis>ant</emphasis>, este sistema (similar a Makefile de UNIX), se encarga de construir la aplicación en dos niveles, la compilación de todas las clases en un directorio <emphasis>build</emphasis> y la creación de un fichero de distribución en <emphasis>dist</emphasis> llamado <emphasis>tetris.jar</emphasis>.</para>
+		</section>
+		
+		<section>
+			<title>BlueJ</title>
+			
+			<para>La práctica ha sido creada en BlueJ, y se han mantenido los ficheros de proyecto, por lo que se puede abrir, en el directorio <emphasis>src</emphasis>, a través del fichero de proyecto, en el programa BlueJ la práctica.</para>
+			
+			<para>Para ejecutar, tenemos dos posibilidades:
+				<orderedlist>
+					<listitem><para><emphasis role="bold">Tetris</emphasis>: ejecutar el método <emphasis>main</emphasis> de esta clase, para lanzar la aplicación de escritorio.</para></listitem>
+					<listitem><para><emphasis role="bold">Web</emphasis>: ejecutar el applet a través de la opción <emphasis>Run Applet</emphasis>.</para></listitem>
+				</orderedlist>
+			</para>
+		</section>
+		
+	</chapter>
+	<chapter>
+		<title>Enunciado y Análisis de la Práctica</title>
+		
+		<para>La práctica del presente curso va a ser diseñar e implementar una versión del conocido juego Tetris. Esto servirá para estudiar y practicar los mecanismos de la programación Orientada a Objetos.</para>
+		
+		<section>
+			<title>Historia</title>
+			
+			<para>Tetris es un juego desarrollado por Alekséi Pázhitnov. Este juego se basaba en otro previo que se llamaba pentaminós. El número de cuadros que compone cada una de las piezas (siempre constante a cuatro) es lo que da nombre al juego (tetra, de cuatro, da el nombre de tetris). Su éxito vino con su portabilidad a IBM PC y a otras plataformas, como Apple II, Commodore 64, Atari ST y Sinclair ZX Spectrum.</para>
+			
+			<para>Tetris ha sido históricamente uno de los videojuegos más versionados. Después del éxito de este juego, muchos otros trataron de imitarlo. Existe incluso una versión gratuita en muy popular en Internet denominada TetriNET, que proporciona una versión multijugador en arquitectura cliente-servidor en el que se pueden enfrentar a través de la red de 2 a 6 personas con la posibilidad de crear equipos.</para>
+		</section>
+		
+		<section>
+			<title>Mecánica del juego</title>
+			
+			<para>Distintos tetriminos, figuras geométricas compuestas por cuatro bloques cuadrados unidos de forma ortogonal, caen de la parte superior de la pantalla. El jugador no puede impedir esta caída pero puede decidir la rotación de la pieza (0º, 90º, 180º y 270º) y en qué lugar debe caer. Cuando una línea horizontal se completa, esa línea desaparece y todas las piezas que están por encima descienden una posición, liberando espacio de juego y por tanto facilitando la tarea de situar nuevas piezas. La caída de las piezas se acelera progresivamente. El juego termina cuando las piezas se amontonan hasta salir del área de juego.</para>
+			
+			<!-- FIGURA 1 -->
+			
+			<para>Para simplificar el juego, se van a hacer las siguientes suposiciones:
+				<itemizedlist>
+					<listitem><para>[R1] La pantalla está formada por 25 líneas (contadas desde la parte inferior a la parte superior).</para></listitem>
+					<listitem><para>[R2] Puesto que las piezas caen de la zona superior, y aparecen inicialmente en el formato que se muestra en la figura, el área de juego efectivo son 23 líneas (restando dos líneas por la colocación inicial de las piezas).</para></listitem>
+					<listitem><para>[R3] El ancho de la pantalla será de 12 casillas.</para></listitem>
+					<listitem><para>[R4] Una pieza nueva no aparece hasta que no ha caído otra.</para></listitem>
+					<listitem><para>[R5] No se produce aceleración en la caída de las piezas a lo largo del juego. Estas caerán a una velocidad de 1 fila por segundo, de tal manera que una pieza tarda 23 segundos en caer de la parte superior a la inferior, si no se producen rotaciones.</para></listitem>
+					<listitem><para>[R6] Como máximo el juego deja hace cuatro rotaciones por segundo.</para></listitem>
+					<listitem><para>[R7] Las piezas se desplazarán a izquierda y derecha con los cursores, y [R8] rotarán en un solo sentido (en el de las agujas del reloj), mediante la flecha superior de los cursores.</para></listitem>
+					<listitem><para>[R9] No se habilitará la opción de dejar caer la pieza como ocurre en el juego original.</para></listitem>
+					<listitem><para>[R10] No se establecerá sistema de puntuaciones.</para></listitem>
+					<listitem><para>[R11] No se establecerán niveles diferentes en el juego.</para></listitem>
+					<listitem><para>[R12] Las piezas siempre aparecen por la parte superior y central del tablero.</para></listitem>
+				</itemizedlist>
+			</para>
+		</section>
+		
+		<section>
+			<title>Ampliando requisitos con supuestos</title>
+			
+			<para>La lista de requisitos es algo escasa, por lo que, para tener presente cada elemento, se hará una descripción de lo que se desarrollará con todos los supuestos que se han entendido, deben estar presentes en la práctica, y los que se han expuesto de forma explícita.</para>
+			
+			<para>El juego de tetris se basa en la definición ya mencionada anteriormente de: <emphasis>la consecución de caída de [R13] piezas de cuatro bloques dispuestas de 7 formas diferentes, que pueden [R8] rotarse y [R7] desplazarse lateralmente hasta que termine su caída. [R4] Cuando una pieza se ha posado, aparece otra, y así hasta que ya no hay posibilidad de que aparezcan nuevas piezas. Igualmente, [R14] cuando una línea horizontal se completa, la línea desaparece y todos los bloques superiores bajan una posición.</emphasis></para>
+			
+			<para>Con esto tenemos la definición a alto nivel, que se completa con algunos requisitos vistos antes. No obstante, quedan algunas preguntas en el aire:
+				<itemizedlist>
+					<listitem><para>[R15] ¿Cómo rotamos las piezas? En principio, tomaré como suposición que la rotación de la pieza en 90, 180 y 270 grados, tienen que resultar en que la primera fila y la primera columna tiene que tener, al menos, un bloque, es decir, que la figura de la recta, debe de estar en posición inicial completando en la posición X de la pieza en el tablero, e igualmente en su rotación de 180 grados; en cambio, cuando se rote 90 ó 270 grados, debe ocupar los cuatro bloques a partir de la posición Y relativa al tablero.</para></listitem>
+					<listitem><para>[R16] Dos bloques no pueden ocupar el mismo espacio, por lo que, en los movimientos de giro, deplazamiento a izquierda y derecha y el movimiento de caída, se debe de tener en cuenta que no se produzca el caso de que dos bloques ocupen el mismo espacio.</para></listitem>
+					<listitem><para>[R17] Límites del tablero. Ningún bloque puede dibujarse fuera de los límites laterales e inferior del tablero, por lo que se tendrán que controlar en el giro, los desplazamientos laterales y la caída, que no se salga ningún bloque del tablero.</para></listitem>
+				</itemizedlist>
+			</para>
+		</section>
+	</chapter>
+	<chapter>
+		<title>Diseño de la Práctica</title>
+		
+		<para>.</para>
+	</chapter>
+	<chapter>
+		<title>Implementación de la Práctica</title>
+		
+		<para>.</para>
+	</chapter>
+	<chapter>
+		<title>Conclusiones y Comentarios</title>
+		
 		<para>.</para>
 	</chapter>
 </book>
