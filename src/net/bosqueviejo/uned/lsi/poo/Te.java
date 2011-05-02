@@ -10,9 +10,9 @@ import java.awt.Graphics;
  * 
  * Las formas que se incluyen son:
  * <pre>
- * |   -+-    |    |
- * +-   |    -+   -+-
- * |          |
+ *  |    |   -+-    | 
+ * -+-   +-   |    -+ 
+ *       |          |
  * </pre>
  * @author Manuel Ángel Rubio Jiménez
  * @version 2011-04-22
@@ -33,6 +33,12 @@ public class Te extends Pieza
     protected short[][][] getFormas() {
         short[][][] formas = 
         {
+            {
+                { 0, 1, 0, 0 },
+                { 1, 1, 1, 0 },
+                { 0, 0, 0, 0 },
+                { 0, 0, 0, 0 }
+            },
             { 
                 { 1, 0, 0, 0 },
                 { 1, 1, 0, 0 },
@@ -49,12 +55,6 @@ public class Te extends Pieza
                 { 0, 1, 0, 0 },
                 { 1, 1, 0, 0 },
                 { 0, 1, 0, 0 },
-                { 0, 0, 0, 0 }
-            },
-            {
-                { 0, 1, 0, 0 },
-                { 1, 1, 1, 0 },
-                { 0, 0, 0, 0 },
                 { 0, 0, 0, 0 }
             }
         };
