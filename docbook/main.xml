@@ -5,69 +5,69 @@
 	<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="signature.xml" />
 
     <preface>
-        <title>IntroducciÛn</title>
+        <title>Introducci√≥n</title>
 
-		<para>Este documento responde al requisito de documentaciÛn presente en la pr·ctica de la asignatura de ProgramaciÛn Orientada a Objetos, impartida en los estudios de Grado en IngenierÌa Inform·tica de la UNED.</para>
+		<para>Este documento responde al requisito de documentaci√≥n presente en la pr√°ctica de la asignatura de Programaci√≥n Orientada a Objetos, impartida en los estudios de Grado en Ingenier√≠a Inform√°tica de la UNED.</para>
 		
-		<para>La pr·ctica consiste en implementar el juego Tetris, en su nivel m·s b·sico, y empleando una estructura orientada a objetos en la que se emplee herencia, agregaciÛn, composiciÛn y otros elementos propios de la orientaciÛn a objetos.</para>
+		<para>La pr√°ctica consiste en implementar el juego Tetris, en su nivel m√°s b√°sico, y empleando una estructura orientada a objetos en la que se emplee herencia, agregaci√≥n, composici√≥n y otros elementos propios de la orientaci√≥n a objetos.</para>
 	</preface>
 	<chapter>
-		<title>Inicio R·pido</title>
+		<title>Inicio R√°pido</title>
 		
-		<para>Como la evaluaciÛn de la pr·ctica consiste, principalmente, en que funcione. En este apartado voy a dar instrucciones b·sicas de cÛmo hacer la ejecuciÛn de la pr·ctica en todos los ·mbitos en los que se ha probado.</para>
+		<para>Como la evaluaci√≥n de la pr√°ctica consiste, principalmente, en que funcione. En este apartado voy a dar instrucciones b√°sicas de c√≥mo hacer la ejecuci√≥n de la pr√°ctica en todos los √°mbitos en los que se ha probado.</para>
 		
 		<section>
 			<title>Ant</title>
 			
-			<para>Lo m·s simple, es entrar a nivel de consola y ejecutar <emphasis>ant</emphasis>, este sistema (similar a Makefile de UNIX), se encarga de construir la aplicaciÛn en dos niveles, la compilaciÛn de todas las clases en un directorio <emphasis>build</emphasis> y la creaciÛn de un fichero de distribuciÛn en <emphasis>dist</emphasis> llamado <emphasis>tetris.jar</emphasis>.</para>
+			<para>Lo m√°s simple, es entrar a nivel de consola y ejecutar <emphasis>ant</emphasis>, este sistema (similar a Makefile de UNIX), se encarga de construir la aplicaci√≥n en dos niveles, la compilaci√≥n de todas las clases en un directorio <emphasis>build</emphasis> y la creaci√≥n de un fichero de distribuci√≥n en <emphasis>dist</emphasis> llamado <emphasis>tetris.jar</emphasis>.</para>
 		</section>
 		
 		<section>
 			<title>BlueJ</title>
 			
-			<para>La pr·ctica ha sido creada en BlueJ, y se han mantenido los ficheros de proyecto, por lo que se puede abrir, en el directorio <emphasis>src</emphasis>, a travÈs del fichero de proyecto, en el programa BlueJ la pr·ctica.</para>
+			<para>La pr√°ctica ha sido creada en BlueJ, y se han mantenido los ficheros de proyecto, por lo que se puede abrir, en el directorio <emphasis>src</emphasis>, a trav√©s del fichero de proyecto, en el programa BlueJ la pr√°ctica.</para>
 			
 			<para>Para ejecutar, tenemos dos posibilidades:
 				<orderedlist>
-					<listitem><para><emphasis role="bold">Tetris</emphasis>: ejecutar el mÈtodo <emphasis>main</emphasis> de esta clase, para lanzar la aplicaciÛn de escritorio.</para></listitem>
-					<listitem><para><emphasis role="bold">Web</emphasis>: ejecutar el applet a travÈs de la opciÛn <emphasis>Run Applet</emphasis>.</para></listitem>
+					<listitem><para><emphasis role="bold">Tetris</emphasis>: ejecutar el m√©todo <emphasis>main</emphasis> de esta clase, para lanzar la aplicaci√≥n de escritorio.</para></listitem>
+					<listitem><para><emphasis role="bold">Web</emphasis>: ejecutar el applet a trav√©s de la opci√≥n <emphasis>Run Applet</emphasis>.</para></listitem>
 				</orderedlist>
 			</para>
 		</section>
 		
 	</chapter>
 	<chapter>
-		<title>Enunciado y An·lisis de la Pr·ctica</title>
+		<title>Enunciado y An√°lisis de la Pr√°ctica</title>
 		
-		<para>La pr·ctica del presente curso va a ser diseÒar e implementar una versiÛn del conocido juego Tetris. Esto servir· para estudiar y practicar los mecanismos de la programaciÛn Orientada a Objetos.</para>
+		<para>La pr√°ctica del presente curso va a ser dise√±ar e implementar una versi√≥n del conocido juego Tetris. Esto servir√° para estudiar y practicar los mecanismos de la programaci√≥n Orientada a Objetos.</para>
 		
 		<section>
 			<title>Historia</title>
 			
-			<para>Tetris es un juego desarrollado por AleksÈi P·zhitnov. Este juego se basaba en otro previo que se llamaba pentaminÛs. El n˙mero de cuadros que compone cada una de las piezas (siempre constante a cuatro) es lo que da nombre al juego (tetra, de cuatro, da el nombre de tetris). Su Èxito vino con su portabilidad a IBM PC y a otras plataformas, como Apple II, Commodore 64, Atari ST y Sinclair ZX Spectrum.</para>
+			<para>Tetris es un juego desarrollado por Aleks√©i P√°zhitnov. Este juego se basaba en otro previo que se llamaba pentamin√≥s. El n√∫mero de cuadros que compone cada una de las piezas (siempre constante a cuatro) es lo que da nombre al juego (tetra, de cuatro, da el nombre de tetris). Su √©xito vino con su portabilidad a IBM PC y a otras plataformas, como Apple II, Commodore 64, Atari ST y Sinclair ZX Spectrum.</para>
 			
-			<para>Tetris ha sido histÛricamente uno de los videojuegos m·s versionados. DespuÈs del Èxito de este juego, muchos otros trataron de imitarlo. Existe incluso una versiÛn gratuita en muy popular en Internet denominada TetriNET, que proporciona una versiÛn multijugador en arquitectura cliente-servidor en el que se pueden enfrentar a travÈs de la red de 2 a 6 personas con la posibilidad de crear equipos.</para>
+			<para>Tetris ha sido hist√≥ricamente uno de los videojuegos m√°s versionados. Despu√©s del √©xito de este juego, muchos otros trataron de imitarlo. Existe incluso una versi√≥n gratuita en muy popular en Internet denominada TetriNET, que proporciona una versi√≥n multijugador en arquitectura cliente-servidor en el que se pueden enfrentar a trav√©s de la red de 2 a 6 personas con la posibilidad de crear equipos.</para>
 		</section>
 		
 		<section>
-			<title>Mec·nica del juego</title>
+			<title>Mec√°nica del juego</title>
 			
-			<para>Distintos tetriminos, figuras geomÈtricas compuestas por cuatro bloques cuadrados unidos de forma ortogonal, caen de la parte superior de la pantalla. El jugador no puede impedir esta caÌda pero puede decidir la rotaciÛn de la pieza (0∫, 90∫, 180∫ y 270∫) y en quÈ lugar debe caer. Cuando una lÌnea horizontal se completa, esa lÌnea desaparece y todas las piezas que est·n por encima descienden una posiciÛn, liberando espacio de juego y por tanto facilitando la tarea de situar nuevas piezas. La caÌda de las piezas se acelera progresivamente. El juego termina cuando las piezas se amontonan hasta salir del ·rea de juego.</para>
+			<para>Distintos tetriminos, figuras geom√©tricas compuestas por cuatro bloques cuadrados unidos de forma ortogonal, caen de la parte superior de la pantalla. El jugador no puede impedir esta ca√≠da pero puede decidir la rotaci√≥n de la pieza (0¬∫, 90¬∫, 180¬∫ y 270¬∫) y en qu√© lugar debe caer. Cuando una l√≠nea horizontal se completa, esa l√≠nea desaparece y todas las piezas que est√°n por encima descienden una posici√≥n, liberando espacio de juego y por tanto facilitando la tarea de situar nuevas piezas. La ca√≠da de las piezas se acelera progresivamente. El juego termina cuando las piezas se amontonan hasta salir del √°rea de juego.</para>
 			
 			<!-- FIGURA 1 -->
 			
 			<para>Para simplificar el juego, se van a hacer las siguientes suposiciones:
 				<itemizedlist>
-					<listitem><para>[R1] La pantalla est· formada por 25 lÌneas (contadas desde la parte inferior a la parte superior).</para></listitem>
-					<listitem><para>[R2] Puesto que las piezas caen de la zona superior, y aparecen inicialmente en el formato que se muestra en la figura, el ·rea de juego efectivo son 23 lÌneas (restando dos lÌneas por la colocaciÛn inicial de las piezas).</para></listitem>
-					<listitem><para>[R3] El ancho de la pantalla ser· de 12 casillas.</para></listitem>
-					<listitem><para>[R4] Una pieza nueva no aparece hasta que no ha caÌdo otra.</para></listitem>
-					<listitem><para>[R5] No se produce aceleraciÛn en la caÌda de las piezas a lo largo del juego. Estas caer·n a una velocidad de 1 fila por segundo, de tal manera que una pieza tarda 23 segundos en caer de la parte superior a la inferior, si no se producen rotaciones.</para></listitem>
-					<listitem><para>[R6] Como m·ximo el juego deja hace cuatro rotaciones por segundo.</para></listitem>
-					<listitem><para>[R7] Las piezas se desplazar·n a izquierda y derecha con los cursores, y [R8] rotar·n en un solo sentido (en el de las agujas del reloj), mediante la flecha superior de los cursores.</para></listitem>
-					<listitem><para>[R9] No se habilitar· la opciÛn de dejar caer la pieza como ocurre en el juego original.</para></listitem>
-					<listitem><para>[R10] No se establecer· sistema de puntuaciones.</para></listitem>
-					<listitem><para>[R11] No se establecer·n niveles diferentes en el juego.</para></listitem>
+					<listitem><para>[R1] La pantalla est√° formada por 25 l√≠neas (contadas desde la parte inferior a la parte superior).</para></listitem>
+					<listitem><para>[R2] Puesto que las piezas caen de la zona superior, y aparecen inicialmente en el formato que se muestra en la figura, el √°rea de juego efectivo son 23 l√≠neas (restando dos l√≠neas por la colocaci√≥n inicial de las piezas).</para></listitem>
+					<listitem><para>[R3] El ancho de la pantalla ser√° de 12 casillas.</para></listitem>
+					<listitem><para>[R4] Una pieza nueva no aparece hasta que no ha ca√≠do otra.</para></listitem>
+					<listitem><para>[R5] No se produce aceleraci√≥n en la ca√≠da de las piezas a lo largo del juego. Estas caer√°n a una velocidad de 1 fila por segundo, de tal manera que una pieza tarda 23 segundos en caer de la parte superior a la inferior, si no se producen rotaciones.</para></listitem>
+					<listitem><para>[R6] Como m√°ximo el juego deja hace cuatro rotaciones por segundo.</para></listitem>
+					<listitem><para>[R7] Las piezas se desplazar√°n a izquierda y derecha con los cursores, y [R8] rotar√°n en un solo sentido (en el de las agujas del reloj), mediante la flecha superior de los cursores.</para></listitem>
+					<listitem><para>[R9] No se habilitar√° la opci√≥n de dejar caer la pieza como ocurre en el juego original.</para></listitem>
+					<listitem><para>[R10] No se establecer√° sistema de puntuaciones.</para></listitem>
+					<listitem><para>[R11] No se establecer√°n niveles diferentes en el juego.</para></listitem>
 					<listitem><para>[R12] Las piezas siempre aparecen por la parte superior y central del tablero.</para></listitem>
 				</itemizedlist>
 			</para>
@@ -76,26 +76,26 @@
 		<section>
 			<title>Ampliando requisitos con supuestos</title>
 			
-			<para>La lista de requisitos es algo escasa, por lo que, para tener presente cada elemento, se har· una descripciÛn de lo que se desarrollar· con todos los supuestos que se han entendido, deben estar presentes en la pr·ctica, y los que se han expuesto de forma explÌcita.</para>
+			<para>La lista de requisitos es algo escasa, por lo que, para tener presente cada elemento, se har√° una descripci√≥n de lo que se desarrollar√° con todos los supuestos que se han entendido, deben estar presentes en la pr√°ctica, y los que se han expuesto de forma expl√≠cita.</para>
 			
-			<para>El juego de tetris se basa en la definiciÛn ya mencionada anteriormente de: <emphasis>la consecuciÛn de caÌda de [R13] piezas de cuatro bloques dispuestas de 7 formas diferentes, que pueden [R8] rotarse y [R7] desplazarse lateralmente hasta que termine su caÌda. [R4] Cuando una pieza se ha posado, aparece otra, y asÌ hasta que ya no hay posibilidad de que aparezcan nuevas piezas. Igualmente, [R14] cuando una lÌnea horizontal se completa, la lÌnea desaparece y todos los bloques superiores bajan una posiciÛn.</emphasis></para>
+			<para>El juego de tetris se basa en la definici√≥n ya mencionada anteriormente de: <emphasis>la consecuci√≥n de ca√≠da de [R13] piezas de cuatro bloques dispuestas de 7 formas diferentes, que pueden [R8] rotarse y [R7] desplazarse lateralmente hasta que termine su ca√≠da. [R4] Cuando una pieza se ha posado, aparece otra, y as√≠ hasta que ya no hay posibilidad de que aparezcan nuevas piezas. Igualmente, [R14] cuando una l√≠nea horizontal se completa, la l√≠nea desaparece y todos los bloques superiores bajan una posici√≥n.</emphasis></para>
 			
-			<para>Con esto tenemos la definiciÛn a alto nivel, que se completa con algunos requisitos vistos antes. No obstante, quedan algunas preguntas en el aire:
+			<para>Con esto tenemos la definici√≥n a alto nivel, que se completa con algunos requisitos vistos antes. No obstante, quedan algunas preguntas en el aire:
 				<itemizedlist>
-					<listitem><para>[R15] øCÛmo rotamos las piezas? En principio, tomarÈ como suposiciÛn que la rotaciÛn de la pieza en 90, 180 y 270 grados, tienen que resultar en que la primera fila y la primera columna tiene que tener, al menos, un bloque, es decir, que la figura de la recta, debe de estar en posiciÛn inicial completando en la posiciÛn X de la pieza en el tablero, e igualmente en su rotaciÛn de 180 grados; en cambio, cuando se rote 90 Û 270 grados, debe ocupar los cuatro bloques a partir de la posiciÛn Y relativa al tablero.</para></listitem>
-					<listitem><para>[R16] Dos bloques no pueden ocupar el mismo espacio, por lo que, en los movimientos de giro, deplazamiento a izquierda y derecha y el movimiento de caÌda, se debe de tener en cuenta que no se produzca el caso de que dos bloques ocupen el mismo espacio.</para></listitem>
-					<listitem><para>[R17] LÌmites del tablero. Ning˙n bloque puede dibujarse fuera de los lÌmites laterales e inferior del tablero, por lo que se tendr·n que controlar en el giro, los desplazamientos laterales y la caÌda, que no se salga ning˙n bloque del tablero.</para></listitem>
+					<listitem><para>[R15] ¬øC√≥mo rotamos las piezas? En principio, tomar√© como suposici√≥n que la rotaci√≥n de la pieza en 90, 180 y 270 grados, tienen que resultar en que la primera fila y la primera columna tiene que tener, al menos, un bloque, es decir, que la figura de la recta, debe de estar en posici√≥n inicial completando en la posici√≥n X de la pieza en el tablero, e igualmente en su rotaci√≥n de 180 grados; en cambio, cuando se rote 90 √≥ 270 grados, debe ocupar los cuatro bloques a partir de la posici√≥n Y relativa al tablero.</para></listitem>
+					<listitem><para>[R16] Dos bloques no pueden ocupar el mismo espacio, por lo que, en los movimientos de giro, deplazamiento a izquierda y derecha y el movimiento de ca√≠da, se debe de tener en cuenta que no se produzca el caso de que dos bloques ocupen el mismo espacio.</para></listitem>
+					<listitem><para>[R17] L√≠mites del tablero. Ning√∫n bloque puede dibujarse fuera de los l√≠mites laterales e inferior del tablero, por lo que se tendr√°n que controlar en el giro, los desplazamientos laterales y la ca√≠da, que no se salga ning√∫n bloque del tablero.</para></listitem>
 				</itemizedlist>
 			</para>
 		</section>
 	</chapter>
 	<chapter>
-		<title>DiseÒo de la Pr·ctica</title>
+		<title>Dise√±o de la Pr√°ctica</title>
 		
 		<para>.</para>
 	</chapter>
 	<chapter>
-		<title>ImplementaciÛn de la Pr·ctica</title>
+		<title>Implementaci√≥n de la Pr√°ctica</title>
 		
 		<para>.</para>
 	</chapter>
@@ -109,13 +109,13 @@
 
 Memoria:
 
-	* JerarquÌa de clases
-	* Problem·tica encontrada
+	* Jerarqu√≠a de clases
+	* Problem√°tica encontrada
 	* Mejoras
-	* CrÌtica de la Pr·ctica
+	* Cr√≠tica de la Pr√°ctica
 
-enviar al correo electrÛnico: jdelgado@lsi.uned.es
-con asunto: Entrega de Pr·ctica de Fiscales
+enviar al correo electr√≥nico: jdelgado@lsi.uned.es
+con asunto: Entrega de Pr√°ctica de Fiscales
 
 Nombre, Apellidos, Email, DNI
 
